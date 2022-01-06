@@ -56,17 +56,17 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
-  return (
+   return(
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Overview"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
       <BottomTab.Screen
-        name="TabOne"
+        name="Overview"
         component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
+        options={({ navigation }: RootTabScreenProps<'Overview'>) => ({
+          title: 'Overview',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable
@@ -85,10 +85,10 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="State"
         component={TabTwoScreen}
         options={{
-          title: 'Tab Two',
+          title: 'State',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
